@@ -184,6 +184,12 @@ func (s *TestSuite) TestErrors() {
 		require.Error(s.T(), err)
 		require.EqualError(s.T(), err, configbuilder.ErrFileWrongFormat.Error())
 	})
+
+	s.Run("no loaders", func() {
+		err := s.cb.ToStruct(s.cfg)
+		require.Error(s.T(), err)
+		require.EqualError(s.T(), err, configbuilder.ErrNoLoader.Error())
+	})
 }
 
 func TestRunSuite(t *testing.T) {
