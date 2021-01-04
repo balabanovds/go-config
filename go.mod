@@ -1,4 +1,4 @@
-module github.com/balabanovds/go-config
+module github.com/balabanovds/goutils
 
 go 1.15
 
